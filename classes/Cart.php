@@ -11,23 +11,16 @@
 
 			/*
 			*
-			* Constructor - connect to database
+			* Constructor
 			*
 			*/
 
 			public function __construct() {
 
-				try {
-						$db = new PDO('mysql:host=' . HOST . ';dbname=' . DATABASE, USERNAME, PASSWORD);
-				}
+				if (isset($_SESSION['cart'])) {
 
-				//handle connection error
-				catch(PDOException $exception){
-						echo "Connection error: " . $exception->getMessage();
-				}
+					$this->items = $_SESSION['cart'];
 
-				if($db) {
-					echo "Connection Successfull";
 				}
 
 			}
@@ -58,7 +51,7 @@
 
 		public function displayItems() {
 
-
+			return $this->items;
 
 		}
 
@@ -70,11 +63,8 @@
     	 *
     	 */
 
-		//can we just pass in the $id?
-		public function addItem(Item $item) {
 
-		    // Need the item id:
-		    $id = $item->getId();
+		public function addItem($id) {
 
 		    // Throw an exception if there's no id:
 		    if (!$id) throw new Exception('The cart requires items with unique ID values.');
@@ -82,11 +72,11 @@
 		    // Add or update:
 		    if (isset($this->items[$id])) {
 
-		        $this->updateItem($item, $this->items[$item]['qty'] + 1);
+		        $this->updateItem($id, $this->items[$id]['qty'] + 1);
 
 		    } else {
 
-		        $this->items[$id] = array('item' => $item, 'qty' => 1);
+		        $this->items[$id] = array('qty' => 1);
 
 		    }
 		}
@@ -99,14 +89,16 @@
     	 *
     	 */
 
-		public function updateItem(Item $item, $qty) {
-		    // Need the unique item id:
-		    $id = $item->getId();
-		    // Delete or update accordingly:
+		public function updateItem($id, $qty) {
+
+				// Delete or update accordingly:
 		    if ($qty === 0) {
-		        $this->deleteItem($item);
-		    } elseif ( ($qty > 0) && ($qty != $this->items[$id]['qty'])) {
-		        $this->items[$id]['qty'] = $qty;
+
+						$this->deleteItem($item);
+
+				} elseif ( ($qty > 0) && ($qty != $this->items[$id]['qty'])) {
+
+						$this->items[$id]['qty'] = $qty;
 		    }
 		} // End of updateItem() method.
 
@@ -127,8 +119,11 @@
 
 
 
+		public function persist() {
 
-		//persist to session function?
+			$_SESSION['cart'] = $this->items;
+
+		}
 
 		//display or count items?
 
