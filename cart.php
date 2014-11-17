@@ -1,6 +1,13 @@
 <?php
-  $page = "cart";
-  include('header.php');
+
+   /*
+    * cart.php
+    * This page displays the contents of our shopping cart.
+    *
+    */
+	
+	$page = "cart";
+  	include('header.php');
 
    /*
     *
@@ -31,9 +38,30 @@
 
       if(isset($_SESSION['cart'])) {
 
-        print_r($_SESSION['cart']);
 
+		
+		$db = DB::getInstance();
+		
+		$cart = new Cart();
+		
+		$cartItems = $cart->displayItems();
+		
+		$totalPrice = 0;
+		
+		foreach(array_keys($cartItems) as $itemID) {
+		
+			$itemQty = $cartItems[$itemID]['qty'];
+			$itemName = $db->action('SELECT name', 'products', array('id', '=', $itemID))->first()->name;
+			$itemPrice = $db->action('SELECT price', 'products', array('id', '=', $itemID))->first()->price;
+		
+			echo "Item ID: " . $itemID . " Name: " . $itemName . " Qty: " . $itemQty . " Price: " . $itemPrice . "</br>";
+		
+			$totalPrice = $totalPrice + ($itemQty * $itemPrice);
+		
+		
+		}
         
+        echo "Total Price: $" . $totalPrice;
 
       }
 

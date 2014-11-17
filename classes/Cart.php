@@ -1,5 +1,11 @@
 <?php
 
+   /*
+    * Cart.php
+    * Our cart class. The workhorse of our shopping cart.
+    *
+    */
+
 	class Cart {
 
 		 //read session if exists

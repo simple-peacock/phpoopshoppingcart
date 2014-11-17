@@ -119,7 +119,7 @@ class DB {
 			$operators = array('=', '>', '<', '>=', '<='); // set allowed operators
 
 			$field 		= $where[0];
-			$operator = $where[1];
+			$operator 	= $where[1];
 			$value 		= $where[2];
 
 			if(in_array($operator, $operators)) { // check if operator is allowed

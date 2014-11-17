@@ -2,7 +2,7 @@
 	$page = "home";
 	include('header.php');
 
-	 /*
+	   /*
 		*
 		* Error Reporting (remove this later in production)
 		*
@@ -17,9 +17,10 @@
 	TODO
 	<ul>
 		<li>messaging system, show totals</li>
-		<li>improve cart display page</li>
+		<li>improve cart display page - Done</li>
 		<li>ability to remove items</li>
-		<li>show number of items in cart in the navigation</li>
+		<li>show number of items in cart in the navigation - Done</li>
+		<li>create an Item class?</li>
 	</ul>
 <?php
 	include('footer.php');
