@@ -39,7 +39,7 @@
     $cart->persist();
 
     // redirect back to products page
-    // need some messaging
+    $_SESSION['flashmessage'] = "Product Added.";
     header('Location: products.php');
 
   }

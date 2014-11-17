@@ -27,6 +27,16 @@
 
 <?php
 
+	if(isset($_SESSION['flashmessage'])) {
+?>
+	
+		<div class="alert alert-success" role="alert"><?php echo $_SESSION['flashmessage']; ?></div>
+<?php
+	
+		// remove the message so it does not come up when a user refreshes
+		unset($_SESSION['flashmessage']);	
+	}
+
     /*
      *
      * Display available products from database

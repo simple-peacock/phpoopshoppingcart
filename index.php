@@ -16,11 +16,12 @@
 
 	TODO
 	<ul>
-		<li>messaging system, show totals</li>
+		<li>messaging system, show totals - Done</li>
 		<li>improve cart display page - Done</li>
 		<li>ability to remove items</li>
 		<li>show number of items in cart in the navigation - Done</li>
 		<li>create an Item class?</li>
+		<li>update quantity?</li>
 	</ul>
 <?php
 	include('footer.php');
