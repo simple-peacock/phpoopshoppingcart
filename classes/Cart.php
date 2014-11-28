@@ -101,7 +101,7 @@
 		
 		/*
     	 *
-    	 * Empyt our shopping cart
+    	 * Empty our shopping cart
     	 *
     	 */
 
@@ -117,6 +117,22 @@
 
 		}
 
+
+
+    	/*
+    	 *
+    	 * Delete an item from the shopping cart
+    	 *
+    	 */
+
+		public function removeItem($id) {
+		    
+		    if (isset($this->items[$id])) {
+		            unset($this->items[$id]);
+		    }
+		    
+		    $this->persist();
+		}
 
 
 
@@ -141,18 +157,7 @@
 
 
 
-    	/*
-    	 *
-    	 * Delete an item from the shopping cart
-    	 *
-    	 */
 
-		public function deleteItem(Item $item) {
-		    $id = $item->getId();
-		    if (isset($this->items[$id])) {
-		            unset($this->items[$id]);
-		    }
-		}
 
 
 		//display or count items?

@@ -59,6 +59,7 @@
     		<th>Product Name</th> 
     		<th>Quantity</th>
     		<th>Price</th>
+    		<th></th>
   		</tr>
   	
   	<?php	
@@ -75,6 +76,7 @@
 				<td><?php echo $itemName ?></td>	
 				<td><?php echo $itemQty ?></td>
 				<td><?php echo $itemPrice ?></td>
+				<td><button type="button" class="close"><a href='process.php?action=remove&id=<?php echo $itemID ?>'><span>&times;</span></a></button></td>
 			</tr>
 	
 	<?php

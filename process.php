@@ -61,6 +61,29 @@
     	header('Location: products.php');
 
   	}
+  	
+  	
+  	
+  	/*
+   	 *
+   	 * Remove an item from the cart
+   	 *
+   	 */
+
+  	if(isset($_GET['action']) && $_GET['action'] == 'remove') {
+
+    	$id = $_GET['id'];
+
+    	$cart->removeItem($id);
+
+    	// flash message and redirect back to cart.php page
+    	
+    	// $_SESSION['flashmessage'] = "Product Removed.";
+    	// at the moment cart.php does not have flash messages
+    	
+    	header('Location: cart.php');
+
+  	}
 
 
 
