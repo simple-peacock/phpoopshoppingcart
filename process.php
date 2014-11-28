@@ -56,8 +56,6 @@
 
     	$cart->addItem($id);
 
-    	$cart->persist();
-
     	// flash message and redirect back to products.php page
     	$_SESSION['flashmessage'] = "Product Added.";
     	header('Location: products.php');
@@ -74,11 +72,7 @@
 
   	if(isset($_GET['action']) && $_GET['action'] == 'empty') {
 
-    	// remove all session variables
-    	session_unset();
-
-    	// destroy the session
-    	session_destroy();
+		$cart->destroy();
 
     	// redirect back to cart page
     	header('Location: cart.php');

@@ -96,6 +96,26 @@
 			$_SESSION['cart'] = $this->items;
 
 		}
+		
+		
+		
+		/*
+    	 *
+    	 * Empyt our shopping cart
+    	 *
+    	 */
+
+		public function destroy() {
+
+			$this->items = array();
+
+			// remove all session variables
+    		session_unset();
+
+    		// destroy the session
+    		session_destroy();
+
+		}
 
 
 
