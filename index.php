@@ -1,15 +1,24 @@
 <?php
-	$page = "home";
+
+	/*
+	 *
+	 * Home Page
+	 * 
+	 */
+
+	$page = 'home';
 	include('header.php');
 
-	   /*
-		*
-		* Error Reporting (remove this later in production)
-		*
-		*/
 
-		error_reporting(E_ALL);
-		ini_set('display_errors', 1);
+
+	/*
+	 *
+	 * Error Reporting (remove this later in production)
+	 * 
+	 */
+
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
 ?>
 
 	<h1>PHP OOP Shopping Cart</h1>
@@ -22,7 +31,9 @@
 		<li>show number of items in cart in the navigation - Done</li>
 		<li>create an Item class?</li>
 		<li>update quantity?</li>
+		<li>autoloader?</li>
 	</ul>
+
 <?php
 	include('footer.php');
 ?>

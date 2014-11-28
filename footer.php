@@ -1,14 +1,17 @@
-  </div><!-- close container div -->
+  	</div><!-- close main container div -->
   
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   
-  <!-- jQuery function to fade out the alert message -->
-  <script type="text/javascript">
+  	<!-- jQuery function to fade out the alert message when items are added to cart -->
+  	<script type="text/javascript">
 	
-	$(document).ready(function () {
+		$(document).ready(function () {
  
-		$(".alert").delay(700).fadeOut();
-	});
+			$(".alert").delay(700).fadeOut();
+		
+		});
+	
 	</script>
-  </body>
+
+	</body>
 </html>

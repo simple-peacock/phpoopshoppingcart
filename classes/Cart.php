@@ -8,29 +8,25 @@
 
 	class Cart {
 
-		 //read session if exists
-
-			protected $items = array();
+		protected $items = array();
 
 
+		/*
+		 *
+		 * Constructor
+		 * Load cart items from session data if it exists
+		 *
+		 */
 
+		public function __construct() {
 
-			/*
-			*
-			* Constructor
-			*
-			*/
+			if (isset($_SESSION['cart'])) {
 
-			public function __construct() {
-
-				if (isset($_SESSION['cart'])) {
-
-					$this->items = $_SESSION['cart'];
-
-				}
+				$this->items = $_SESSION['cart'];
 
 			}
 
+		}
 
 
 
@@ -48,12 +44,11 @@
 
 
 
-
 		/*
-		*
-		* Display Items
-		*
-		*/
+		 *
+		 * Display Items
+		 *
+		 */
 
 		public function displayItems() {
 
@@ -69,7 +64,6 @@
     	 *
     	 */
 
-
 		public function addItem($id) {
 
 		    // Throw an exception if there's no id:
@@ -79,13 +73,30 @@
 		    if (isset($this->items[$id])) {
 
 		        $this->updateItem($id, $this->items[$id]['qty'] + 1);
+				$this->persist();
 
 		    } else {
 
 		        $this->items[$id] = array('qty' => 1);
+				$this->persist();
 
 		    }
 		}
+
+
+
+		/*
+    	 *
+    	 * Save our items in session
+    	 *
+    	 */
+
+		private function persist() {
+
+			$_SESSION['cart'] = $this->items;
+
+		}
+
 
 
 
@@ -124,16 +135,7 @@
 		}
 
 
-
-		public function persist() {
-
-			$_SESSION['cart'] = $this->items;
-
-		}
-
 		//display or count items?
-
-		//emtpy cart function - destroy()
 
     }
 ?>
