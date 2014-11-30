@@ -35,9 +35,5 @@
 	</ul>
 
 <?php
-	
-	$cart1->countItems();
-
-	
 	include('footer.php');
 ?>
