@@ -1,30 +1,31 @@
 <?php
 
-   /*
-    * cart.php
-    * This page displays the contents of our shopping cart.
-    *
-    */
+	/*
+     * cart.php
+     * This page displays the contents of our shopping cart.
+     *
+     */
 	
 	$page = "cart";
+	
   	include('header.php');
 
-   /*
-    *
-    * Error Reporting (remove this later in production)
-    *
-    */
+	/*
+     *
+     * Error Reporting (remove this later in production)
+     *
+     */
 
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
 
 
-   /*
-    *
-    * Include Files
-    *
-    */
+	/*
+     *
+     * Include Files
+     *
+     */
 
     require_once 'config.php';
     require_once 'classes/Cart.php';
@@ -35,19 +36,19 @@
     
     	<h1>Cart Contents</h1>
 
-
-	
     <?php
 
-		if(isset($_SESSION['cart'])) {
-		
-		$db = DB::getInstance();
-		
 		$cart = new Cart();
+
+		if($cart->countItems() > 0) {
 		
-		$cartItems = $cart->displayItems();
+			$db = DB::getInstance();
 		
-		$totalPrice = 0;
+			
+		
+			$cartItems = $cart->displayItems();
+		
+			$totalPrice = 0;
 		
 		
 	?>

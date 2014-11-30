@@ -8,6 +8,8 @@
 
 	session_start();
 	
+	require_once 'classes/Cart.php';
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,13 +38,17 @@
 	 		 * currently in our shopping cart.
 	 		 *
 	 		 */
+	 		 
+	 		$cart1 = new Cart();
+	 		
+	 		$itemCount = $cart1->countItems();
 
-            	if(isset($_SESSION['cart'])) {
+        	if($itemCount > 0) {
 
             ?>
               		<span class="badge">
 
-                		<?php echo count($_SESSION['cart']); ?>
+                		<?php echo $itemCount; ?>
 
               		</span>
 

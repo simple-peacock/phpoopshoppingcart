@@ -55,6 +55,27 @@
 			return $this->items;
 
 		}
+		
+		
+		
+		/*
+		 *
+		 * Count Items
+		 *
+		 */
+
+		public function countItems() {
+
+			$count = 0;
+
+			foreach ($this->items as $item) {
+			
+				$count = $count + $item['qty'];
+			}
+			
+			return $count;
+
+		}
 
 
 
@@ -154,13 +175,6 @@
 						$this->items[$id]['qty'] = $qty;
 		    }
 		} // End of updateItem() method.
-
-
-
-
-
-
-		//display or count items?
 
     }
 ?>
