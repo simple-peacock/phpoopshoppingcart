@@ -27,11 +27,12 @@
 	<ul>
 		<li>messaging system, show totals - Done</li>
 		<li>improve cart display page - Done</li>
-		<li>ability to remove items</li>
+		<li>ability to remove items - Done</li>
 		<li>show number of items in cart in the navigation - Done</li>
 		<li>create an Item class?</li>
 		<li>update quantity?</li>
 		<li>autoloader?</li>
+		<li>add some images to our store</li>
 	</ul>
 
 <?php

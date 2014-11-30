@@ -39,9 +39,9 @@
 	 		 *
 	 		 */
 	 		 
-	 		$cart1 = new Cart();
+	 		$cart = new Cart();
 	 		
-	 		$itemCount = $cart1->countItems();
+	 		$itemCount = $cart->countItems();
 
         	if($itemCount > 0) {
 

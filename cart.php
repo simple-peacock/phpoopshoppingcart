@@ -7,8 +7,9 @@
      */
 	
 	$page = "cart";
-	
   	include('header.php');
+
+
 
 	/*
      *
@@ -38,13 +39,10 @@
 
     <?php
 
-		$cart = new Cart();
-
 		if($cart->countItems() > 0) {
+		// our cart object was instantiated in the header
 		
 			$db = DB::getInstance();
-		
-			
 		
 			$cartItems = $cart->displayItems();
 		
@@ -83,12 +81,11 @@
 	<?php
 		
 			$totalPrice = $totalPrice + ($itemQty * $itemPrice);
-		
+	
 		}
 	?>
 	
 	</table>
-	
 	
 	<?php
         
@@ -102,13 +99,9 @@
 
     ?>
     
-    
-
   </div>
 
-
   <p><a class="btn btn-danger" href='process.php?action=empty'>Empty Cart</a></p>
-
 
 <?php
   include('footer.php');

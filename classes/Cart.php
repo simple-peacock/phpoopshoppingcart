@@ -30,20 +30,6 @@
 
 
 
-    	/*
-    	 *
-    	 * Determine if shopping cart is empty
-    	 *
-    	 */
-
-	    public function isEmpty() {
-
-	    	return (empty($this->items));
-
-		}
-
-
-
 		/*
 		 *
 		 * Display Items
