@@ -3,7 +3,7 @@
 	/*
 	 *
 	 * Home Page
-	 * 
+	 *
 	 */
 
 	$page = 'home';
@@ -14,7 +14,7 @@
 	/*
 	 *
 	 * Error Reporting (remove this later in production)
-	 * 
+	 *
 	 */
 
 	error_reporting(E_ALL);
@@ -30,9 +30,10 @@
 		<li>ability to remove items - Done</li>
 		<li>show number of items in cart in the navigation - Done</li>
 		<li>create an Item class?</li>
-		<li>update quantity?</li>
+		<li>ability to update quantity?</li>
 		<li>autoloader?</li>
 		<li>add some images to our store</li>
+		<li>name spacing</li>
 	</ul>
 
 <?php
