@@ -3,13 +3,13 @@
 	/*
 	 *
 	 * Header Page - included on other pages
-	 * 
+	 *
 	 */
 
 	session_start();
-	
+
 	require_once 'classes/Cart.php';
-	
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,11 +17,14 @@
   	<head>
     	<meta charset="utf-8" />
     	<title>PHP Shopping Cart</title>
+
     	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+			<link rel="stylesheet" href="css/mystyles.css">
+
   	</head>
 
   	<body>
-  
+
 	<!-- main body container -->
 	<div class="container">
 
@@ -30,7 +33,7 @@
         	<li class='<?php if($page == "home") { echo "active"; } ?>'><a href="index.php">Home</a></li>
         	<li class='<?php if($page == "products") { echo "active"; } ?>'><a href="products.php">Products</a></li>
        		<li class='<?php if($page == "cart") { echo "active"; } ?>'><a href="cart.php">Cart
-          	
+
           	<?php
 			/*
 	 		 *
@@ -38,9 +41,9 @@
 	 		 * currently in our shopping cart.
 	 		 *
 	 		 */
-	 		 
+
 	 		$cart = new Cart();
-	 		
+
 	 		$itemCount = $cart->countItems();
 
         	if($itemCount > 0) {
