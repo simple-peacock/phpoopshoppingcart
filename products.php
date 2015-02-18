@@ -6,6 +6,8 @@
    *
    */
 
+	use SimplePeacock\DB;
+
 	$page = "products";
   include('header.php');
 
@@ -29,7 +31,7 @@
    */
 
   require_once 'config.php';
-  require_once 'classes/DB.php';
+
 ?>
 
 <h1>Products</h1>

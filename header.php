@@ -6,6 +6,8 @@
 	 *
 	 */
 
+	use SimplePeacock\Cart;
+
 	session_start();
 
 	require_once 'vendor/autoload.php';

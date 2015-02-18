@@ -29,7 +29,7 @@ class DB {
 	private function __construct() {
 
 			try {
-				$this->_pdo = new PDO('mysql:host=' . HOST . ';dbname=' . DATABASE, USERNAME, PASSWORD);
+				$this->_pdo = new \PDO('mysql:host=' . HOST . ';dbname=' . DATABASE, USERNAME, PASSWORD);
 
 		} catch(PDOException $e) {
 
@@ -92,7 +92,7 @@ class DB {
 			// execute the query regardless if there are any paramaters
 			if($this->_query->execute()) {
 
-				$this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
+				$this->_results = $this->_query->fetchAll(\PDO::FETCH_OBJ);
 				$this->_count = $this->_query->rowCount();
 
 			} else {

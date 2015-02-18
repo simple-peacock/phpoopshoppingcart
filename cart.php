@@ -6,7 +6,8 @@
    *
    */
 
-	use SimplePeacock\
+	use SimplePeacock\Cart;
+	use SimplePeacock\DB;
 
 	$page = "cart";
   include('header.php');
@@ -31,8 +32,6 @@
      */
 
     require_once 'config.php';
-    require_once 'classes/Cart.php';
-    require_once 'classes/DB.php';
 
 ?>
 	<div>
