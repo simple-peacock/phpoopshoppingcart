@@ -1,5 +1,7 @@
 <?php
 
+namespace SimplePeacock;
+
 //not sure if we will end up using this
 
 class Item {

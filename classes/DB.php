@@ -1,5 +1,7 @@
 <?php
 
+namespace SimplePeacock;
+
 /*
  *
  * Database abstraction class

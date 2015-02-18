@@ -8,7 +8,7 @@
 
 	session_start();
 
-	require_once 'classes/Cart.php';
+	require_once 'vendor/autoload.php';
 
 ?>
 <!DOCTYPE html>

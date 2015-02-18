@@ -1,7 +1,9 @@
 <?php
 
+	use SimplePeacock\Cart;
+
 	/*
- 	 * process.php	
+ 	 * process.php
  	 * Our backend processing script
  	 * Takes input via $_GET and makes calls to our Cart class
  	 *
@@ -29,8 +31,7 @@
    	 */
 
   	require_once 'config.php';
-  	require_once 'classes/Cart.php';
-  	require_once 'classes/DB.php';
+  	require_once 'vendor/autoload.php';
 
 
 
@@ -61,9 +62,9 @@
     	header('Location: products.php');
 
   	}
-  	
-  	
-  	
+
+
+
   	/*
    	 *
    	 * Remove an item from the cart
@@ -77,10 +78,10 @@
     	$cart->removeItem($id);
 
     	// flash message and redirect back to cart.php page
-    	
+
     	// $_SESSION['flashmessage'] = "Product Removed.";
     	// at the moment cart.php does not have flash messages
-    	
+
     	header('Location: cart.php');
 
   	}

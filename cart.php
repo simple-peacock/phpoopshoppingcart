@@ -1,13 +1,15 @@
 <?php
 
 	/*
-     * cart.php
-     * This page displays the contents of our shopping cart.
-     *
-     */
-	
+   * cart.php
+   * This page displays the contents of our shopping cart.
+   *
+   */
+
+	use SimplePeacock\
+
 	$page = "cart";
-  	include('header.php');
+  include('header.php');
 
 
 
@@ -34,61 +36,61 @@
 
 ?>
 	<div>
-    
+
     	<h1>Cart Contents</h1>
 
     <?php
 
 		if($cart->countItems() > 0) {
 		// our cart object was instantiated in the header
-		
+
 			$db = DB::getInstance();
-		
+
 			$cartItems = $cart->displayItems();
-		
+
 			$totalPrice = 0;
-		
-		
+
+
 	?>
-	
+
 		<table class="table table-striped">
-	
+
 		<tr>
     		<th>Product ID</th>
-    		<th>Product Name</th> 
+    		<th>Product Name</th>
     		<th>Quantity</th>
     		<th>Price</th>
     		<th></th>
   		</tr>
-  	
-  	<?php	
-		
+
+  	<?php
+
 		foreach(array_keys($cartItems) as $itemID) {
-		
+
 			$itemQty = $cartItems[$itemID]['qty'];
 			$itemName = $db->action('SELECT name', 'products', array('id', '=', $itemID))->first()->name;
 			$itemPrice = $db->action('SELECT price', 'products', array('id', '=', $itemID))->first()->price;
-		
+
 	?>
 			<tr>
 				<td><?php echo $itemID ?></td>
-				<td><?php echo $itemName ?></td>	
+				<td><?php echo $itemName ?></td>
 				<td><?php echo $itemQty ?></td>
 				<td><?php echo $itemPrice ?></td>
 				<td><button type="button" class="close"><a href='process.php?action=remove&id=<?php echo $itemID ?>'><span>&times;</span></a></button></td>
 			</tr>
-	
+
 	<?php
-		
+
 			$totalPrice = $totalPrice + ($itemQty * $itemPrice);
-	
+
 		}
 	?>
-	
+
 	</table>
-	
+
 	<?php
-        
+
         echo "Total Price: $" . $totalPrice;
 
       }
@@ -98,7 +100,7 @@
       }
 
     ?>
-    
+
   </div>
 
   <p><a class="btn btn-danger" href='process.php?action=empty'>Empty Cart</a></p>

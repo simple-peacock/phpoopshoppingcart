@@ -1,5 +1,7 @@
 <?php
 
+	namespace SimplePeacock;
+
    /*
     * Cart.php
     * Our cart class. The workhorse of our shopping cart.
@@ -41,9 +43,9 @@
 			return $this->items;
 
 		}
-		
-		
-		
+
+
+
 		/*
 		 *
 		 * Count Items
@@ -55,10 +57,10 @@
 			$count = 0;
 
 			foreach ($this->items as $item) {
-			
+
 				$count = $count + $item['qty'];
 			}
-			
+
 			return $count;
 
 		}
@@ -103,9 +105,9 @@
 			$_SESSION['cart'] = $this->items;
 
 		}
-		
-		
-		
+
+
+
 		/*
     	 *
     	 * Empty our shopping cart
@@ -133,11 +135,11 @@
     	 */
 
 		public function removeItem($id) {
-		    
+
 		    if (isset($this->items[$id])) {
 		            unset($this->items[$id]);
 		    }
-		    
+
 		    $this->persist();
 		}
 
