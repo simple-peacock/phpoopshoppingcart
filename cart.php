@@ -94,7 +94,10 @@ require_once 'config.php';
                     <td><?php echo $itemName ?></td>
                     <td><?php echo $itemQty ?></td>
                     <td><?php echo $itemPrice ?></td>
-                    <td><button type="button" class="close"><a href='process.php?action=remove&id=<?php echo $itemID ?>'><span>&times;</span></a></button></td>
+
+                    <!-- our remove item button -->
+                    <td><a class="close" href='process.php?action=remove&id=<?php echo $itemID ?>'><span>&times;</span></a></td>
+                
                 </tr>
 
                 <?php
