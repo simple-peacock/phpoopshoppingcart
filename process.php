@@ -1,105 +1,94 @@
 <?php
 
-	use SimplePeacock\Cart;
+/*
+ * process.php
+ * Our backend processing script
+ * Takes input via $_GET and makes calls to our Cart class
+ *
+ */
 
-	/*
- 	 * process.php
- 	 * Our backend processing script
- 	 * Takes input via $_GET and makes calls to our Cart class
- 	 *
- 	 */
+use SimplePeacock\Cart;
 
-	session_start();
-
-
-
-	/*
- 	 *
- 	 * Error Reporting (remove this later in production)
- 	 *
- 	 */
-
- 	error_reporting(E_ALL);
- 	ini_set('display_errors', 1);
+session_start();
 
 
 
-  	/*
-   	 *
-   	 * Include Files
-   	 *
-   	 */
+/*
+ *
+ * Error Reporting (remove this later in production)
+ *
+ */
 
-  	require_once 'config.php';
-  	require_once 'vendor/autoload.php';
-
-
-
-  	/*
-   	 *
-   	 * Capture $_GET variables
-   	 *
-   	 */
-
-  	$cart = new Cart();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 
 
-	/*
-   	 *
-   	 * 'Add To Cart'
-   	 *
-   	 */
+/*
+ *
+ * Include Files
+ *
+ */
 
-  	if(isset($_GET['action']) && $_GET['action'] == 'add') {
+require_once 'config.php';
+require_once 'vendor/autoload.php';
 
-    	$id = $_GET['id'];
-
-    	$cart->addItem($id);
-
-    	// flash message and redirect back to products.php page
-    	$_SESSION['flashmessage'] = "Product Added.";
-    	header('Location: products.php');
-
-  	}
+$cart = new Cart();
 
 
 
-  	/*
-   	 *
-   	 * Remove an item from the cart
-   	 *
-   	 */
+/*
+ *
+ * 'Add To Cart'
+ *
+ */
 
-  	if(isset($_GET['action']) && $_GET['action'] == 'remove') {
+if(isset($_GET['action']) && $_GET['action'] == 'add') {
 
-    	$id = $_GET['id'];
+    $id = $_GET['id'];
 
-    	$cart->removeItem($id);
+    $cart->addItem($id);
 
-    	// flash message and redirect back to cart.php page
+    // flash message and redirect back to products page
+    $_SESSION['flashmessage'] = "Product Added.";
+    header('Location: products.php');
 
-    	// $_SESSION['flashmessage'] = "Product Removed.";
-    	// at the moment cart.php does not have flash messages
-
-    	header('Location: cart.php');
-
-  	}
+}
 
 
 
-	/*
-   	 *
-   	 * 'Empty Cart'
-   	 *
-   	 */
+/*
+  *
+  * Remove an item from the cart
+  *
+  */
 
-  	if(isset($_GET['action']) && $_GET['action'] == 'empty') {
+if(isset($_GET['action']) && $_GET['action'] == 'remove') {
 
-		$cart->destroy();
+    $id = $_GET['id'];
 
-    	// redirect back to cart page
-    	header('Location: cart.php');
+    $cart->removeItem($id);
 
-    	// message ?
-  }
+    // flash message and redirect back to cart page
+    $_SESSION['flashmessage'] = "Product Removed.";
+    header('Location: cart.php');
+
+}
+
+
+
+/*
+ *
+ * 'Empty Cart'
+ *
+ */
+
+if(isset($_GET['action']) && $_GET['action'] == 'empty') {
+
+    $cart->destroy();
+
+    // flash message and redirect back to cart page
+    $_SESSION['flashmessage'] = "Cart has been emptied.";
+    header('Location: cart.php');
+
+}

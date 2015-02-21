@@ -1,16 +1,16 @@
 <?php
 
-	/*
-	 *
-	 * Header Page - included on other pages
-	 *
-	 */
+/*
+ * header.php
+ * Header Page - included on other pages
+ *
+ */
 
-	use SimplePeacock\Cart;
+use SimplePeacock\Cart;
 
-	session_start();
+session_start();
 
-	require_once 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
     	<title>PHP Shopping Cart</title>
 
     	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-			<link rel="stylesheet" href="css/mystyles.css">
+		<link rel="stylesheet" href="css/mystyles.css">
 
   	</head>
 
@@ -38,8 +38,7 @@
 
           	<?php
 			/*
-	 		 *
-	 		 * This bit of code displayes the number of items
+	 		 * This code displays the number of items
 	 		 * currently in our shopping cart.
 	 		 *
 	 		 */
@@ -57,7 +56,8 @@
 
               		</span>
 
-          	<?php } ?></a></li>
+          	<?php } ?>
+                </a></li>
 
 		</ul>
 		<!-- end of navigation -->

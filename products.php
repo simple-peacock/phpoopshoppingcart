@@ -1,36 +1,36 @@
 <?php
 
-	/*
-   *
-   * Products Page - display available products from the database
-   *
-   */
+/*
+ * products.php
+ * Products Page - display available products from the database
+ *
+ */
 
-	use SimplePeacock\DB;
+use SimplePeacock\DB;
 
-	$page = "products";
-  include('header.php');
-
-
-
-  /*
-   *
-   * Error Reporting (remove this later in production)
-   *
-   */
-
-  error_reporting(E_ALL);
-  ini_set('display_errors', 1);
+$page = "products";
+include('header.php');
 
 
 
-  /*
-   *
-   * Include Files
-   *
-   */
+/*
+ *
+ * Error Reporting (remove this later in production)
+ *
+ */
 
-  require_once 'config.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
+
+/*
+ *
+ * Include Files
+ *
+ */
+
+require_once 'config.php';
 
 ?>
 
@@ -39,45 +39,46 @@
 <?php
 
 
+/*
+ *
+ * Flash message - when products are added to our cart
+ *
+ */
 
-	/*
-   *
-   * Flash message - when products are added to our cart
-   *
-   */
+if(isset($_SESSION['flashmessage'])) {
 
-	if(isset($_SESSION['flashmessage'])) {
-?>
+    ?>
 
-	<div class="alert alert-success" role="alert"><?php echo $_SESSION['flashmessage']; ?></div>
-<?php
+    <div class="alert alert-success" role="alert"><?php echo $_SESSION['flashmessage']; ?></div>
 
-	// remove the message so it does not persist on page refresh
-		unset($_SESSION['flashmessage']);
-	}
+    <?php
+
+    // remove the message so it does not persist on page refresh
+    unset($_SESSION['flashmessage']);
+}
 
 
 
-	/*
-   *
-   * Display available products from database
-   *
-   */
+/*
+ *
+ * Display available products from database
+ *
+ */
 
-	// we are using our database wrapper DB.php inside classes folder
-	$db = DB::getInstance();
+// we are using our database wrapper DB.php inside classes folder
+$db = DB::getInstance();
 
-	$products = $db->get('products', array('inventory', '>', 0));
+$products = $db->get('products', array('inventory', '>', 0));
 
-	if($products->count()) {
+if($products->count()) {
 
-		foreach($products->results() as $product) {
+    foreach($products->results() as $product) {
 ?>
 		<div class="row" id="productlist">
 
 			<div class="col-md-2">
 
-				<img class="img-responsive" src="img/<?php echo $product->imagepath; ?>"></img>
+				<img class="img-responsive" src="img/<?php echo $product->imagepath; ?>"/>
 
 			</div>
 
@@ -90,18 +91,18 @@
 				<p>Price: $<?php echo $product->price; ?></p>
 
 				<!-- our 'Add To Cart' button -->
-	      <a class="btn btn-danger" href='process.php?action=add&id=<?php echo $product->id; ?>'>Add To Cart</a>
+	            <a class="btn btn-danger" href='process.php?action=add&id=<?php echo $product->id; ?>'>Add To Cart</a>
 
-	    </div>
+	        </div>
 
 		</div>
 <?php
 
-		} // close our foreach loop
+	} // close our foreach loop used to display available products
 
 	} else {
 
-		// display message if there are no avilable products to purchase
+		// display message if there are no available products to purchase
 		echo 'There are no available products';
 
 	}
