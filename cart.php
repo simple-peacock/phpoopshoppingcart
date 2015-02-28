@@ -97,7 +97,7 @@ require_once 'config.php';
 
                     <!-- our remove item button -->
                     <td><a class="close" href='process.php?action=remove&id=<?php echo $itemID ?>'><span>&times;</span></a></td>
-                
+
                 </tr>
 
                 <?php
