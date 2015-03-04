@@ -43,9 +43,9 @@ $cart = new Cart();
  *
  */
 
-if(isset($_GET['action']) && $_GET['action'] == 'add') {
+if($_POST['action'] == 'add') {
 
-    $id = $_GET['id'];
+    $id = $_POST['id'];
 
     $cart->addItem($id);
 

@@ -91,7 +91,7 @@ if($products->count()) {
 				<p>Price: $<?php echo $product->price; ?></p>
 
 				<!-- our 'Add To Cart' button -->
-	            <a class="btn btn-danger" href='process.php?action=add&id=<?php echo $product->id; ?>'>Add To Cart</a>
+	            <a class="btn btn-danger" onclick='postData("add", <?php echo $product->id; ?>)'>Add To Cart</a>
 
 	        </div>
 
