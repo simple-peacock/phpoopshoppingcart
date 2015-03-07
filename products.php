@@ -59,18 +59,18 @@ if($products->count()) {
 ?>
 		<div class="row" id="productlist">
 
-			<div class="col-md-2">
+			<div class="col-sm-5">
 
-				<img class="img-responsive" src="img/<?php echo $product->imagepath; ?>"/>
+				<img class="img-responsive center-block" src="img/<?php echo $product->imagepath; ?>"/>
 
 			</div>
 
 
-			<div class="col-md-6">
+			<div class="col-sm-7">
 
 				<p>Id: <?php echo $product->id; ?></p>
 				<p>Product Name: <?php echo $product->name; ?></p>
-				<p>Product Description: <?php echo $product->description; ?></p>
+				<p>Product Description: <?php echo stripslashes($product->description); ?></p>
 				<p>Price: $<?php echo $product->price; ?></p>
 
 				<!-- our 'Add To Cart' button -->
