@@ -49,9 +49,8 @@ if($_POST['action'] == 'add') {
 
     $cart->addItem($id);
 
-    // flash message and redirect back to products page
-    $_SESSION['flashmessage'] = "Product Added.";
-    header('Location: products.php');
+    // this will show up in console.log
+    echo "Product added successfully";
 
 }
 
@@ -63,7 +62,7 @@ if($_POST['action'] == 'add') {
   *
   */
 
-if(isset($_GET['action']) && $_GET['action'] == 'remove') {
+if($_POST['action'] == 'remove') {
 
     $id = $_GET['id'];
 
@@ -83,7 +82,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'remove') {
  *
  */
 
-if(isset($_GET['action']) && $_GET['action'] == 'empty') {
+if($_POST['action'] == 'empty') {
 
     $cart->destroy();
 
