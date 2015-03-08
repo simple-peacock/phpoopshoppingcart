@@ -74,7 +74,7 @@ if($products->count()) {
 
     foreach($products->results() as $product) {
 ?>
-		<div class="row" id="productlist">
+		<div class="row top-buffer-medium" id="productlist">
 
 			<div class="col-sm-5">
 
