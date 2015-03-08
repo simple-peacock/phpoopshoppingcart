@@ -85,13 +85,12 @@ if($products->count()) {
 
 			<div class="col-sm-7">
 
-				<p>Product ID: <?php echo $product->id; ?></p>
-				<p>Product Name: <?php echo $product->name; ?></p>
-				<p>Product Description: <?php echo stripslashes($product->description); ?></p>
-				<p>Price: $<?php echo number_format($product->price, 2, '.', ','); ?></p>
+				<p><strong><?php echo $product->name; ?></strong></p>
+				<p><?php echo stripslashes($product->description); ?></p>
+				<p><strong>Price: $<?php echo number_format($product->price, 2, '.', ','); ?></strong></p>
 
 				<!-- our 'Add To Cart' button -->
-	            <a class="btn btn-danger" onclick='postData("add", <?php echo $product->id; ?>)'>Add To Cart</a>
+	            <a class="btn btn-info" onclick='postData("add", <?php echo $product->id; ?>)'>Add To Cart</a>
 
 	        </div>
 
