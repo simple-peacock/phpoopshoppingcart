@@ -38,6 +38,9 @@ require_once 'config.php';
 
     <h1>Cart Contents</h1>
 
+    <!--Our alert message place holder-->
+    <div class="row" id="alert_placeholder"></div>
+
     <?php
 
 
@@ -133,7 +136,7 @@ if($cart->countItems()) {
 
     ?>
 
-    <p><a class="btn btn-danger" href='process.php?action=empty'>Empty Cart</a></p>
+    <a class="btn btn-danger pull-right" onclick='postData("empty")'>Empty Cart</a>
 
     <?php
 }

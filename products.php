@@ -36,11 +36,28 @@ require_once 'config.php';
 
 <h1>Products</h1>
 
-<!--Our alert message place holder-->
-<div class="row" id="alert_placeholder"></div>
-
-
 <?php
+
+
+/*
+ *
+ * Flash message - when products are added to our cart
+ *
+ */
+
+if(isset($_SESSION['flashmessage'])) {
+
+    ?>
+
+    <div class="alert alert-success" role="alert"><?php echo $_SESSION['flashmessage']; ?></div>
+
+    <?php
+
+    // remove the message so it does not persist on page refresh
+    unset($_SESSION['flashmessage']);
+}
+
+
 
 /*
  *
@@ -68,7 +85,7 @@ if($products->count()) {
 
 			<div class="col-sm-7">
 
-				<p>Id: <?php echo $product->id; ?></p>
+				<p>Product ID: <?php echo $product->id; ?></p>
 				<p>Product Name: <?php echo $product->name; ?></p>
 				<p>Product Description: <?php echo stripslashes($product->description); ?></p>
 				<p>Price: $<?php echo $product->price; ?></p>

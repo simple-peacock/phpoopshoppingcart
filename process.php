@@ -3,7 +3,7 @@
 /*
  * process.php
  * Our backend processing script
- * Takes input via $_GET and makes calls to our Cart class
+ * Takes input via $_POST AJAX call and makes requests to our Cart class
  *
  */
 
@@ -49,18 +49,18 @@ if($_POST['action'] == 'add') {
 
     $cart->addItem($id);
 
-    // this will show up in console.log
-    echo "Product added successfully";
+    // flash message
+    $_SESSION['flashmessage'] = "Product Added.";
 
 }
 
 
 
 /*
-  *
-  * Remove an item from the cart
-  *
-  */
+ *
+ * Remove an item from the cart
+ *
+ */
 
 if($_POST['action'] == 'remove') {
 
@@ -68,10 +68,8 @@ if($_POST['action'] == 'remove') {
 
     $cart->removeItem($id);
 
-    // flash message and redirect back to cart page
+    // flash message
     $_SESSION['flashmessage'] = "Product Removed.";
-    header('Location: cart.php');
-
 }
 
 
@@ -88,6 +86,5 @@ if($_POST['action'] == 'empty') {
 
     // flash message and redirect back to cart page
     $_SESSION['flashmessage'] = "Cart has been emptied.";
-    header('Location: cart.php');
 
 }

@@ -3,21 +3,6 @@
  * Our main JavaScript file
  */
 
-// jQuery function to fade out the alert message when items are added to cart
-//$(document).ready(function () {
-//
-//    $(".alert").delay(700).fadeOut();
-//
-//});
-
-$(document).ready(function() {
-    if (window.location.hash) {
-        $('#alert_placeholder').html('<div class="alert alert-success" role="alert">Product has been added!</div>').delay(700).fadeOut();
-    }
-
-});
-
-
 
 function postData(action, id) {
 
@@ -27,20 +12,20 @@ function postData(action, id) {
         data: {action: action, id: id},
         dataType: 'text',
         success: function(response) {
-            console.log(response);
 
-            window.location = window.location + "#success";
+            // for debugging
+            // console.log(response);
 
-            // window.location.reload();
-
-            // $('#alert_placeholder').html('<div class="alert alert-success" role="alert">Product has been added!</div>').delay(700).fadeOut();
-
-
-
+            location.reload();
         },
         error: function() {
-            console.log('There was an error sending the message');
+            console.log('There was an error in this request');
         }
     });
-
 }
+
+$(document).ready(function () {
+
+    $(".alert").delay(700).fadeOut();
+
+});
