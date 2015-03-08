@@ -136,7 +136,12 @@ if($cart->countItems()) {
 
     ?>
 
-    <a class="btn btn-danger pull-right" onclick='postData("empty")'>Empty Cart</a>
+    <div class="row"><a class="btn btn-danger pull-right" onclick='postData("empty")'>Empty Cart</a></div>
+
+    <div class="row">
+    <a class="btn btn-success pull-left" href="products.php">< Continue Shopping</a>
+
+    <a class="btn btn-primary pull-right" href="#p">Checkout ></a></div>
 
     <?php
 }

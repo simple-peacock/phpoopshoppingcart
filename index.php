@@ -39,6 +39,7 @@
 		<li>autoloader?</li>
 		<li>add some images to our store</li>
 		<li>name spacing</li>
+        <li>add continue shopping and checkout buttons</li>
 	</ul>
 
 <?php
