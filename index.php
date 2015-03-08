@@ -23,8 +23,8 @@
 
     <div class="jumbotron">
         <h1>PHP OOP Shopping Cart</h1>
-        <p>view source on github</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+        <p>A simple shopping cart written in PHP.</p>
+        <p><a class="btn btn-primary" href="https://github.com/simple-peacock/phpoopshoppingcart" role="button">Go To GitHub</a></p>
     </div>
 
 	<h2>TODO</h2>
@@ -36,10 +36,10 @@
 		<li>show number of items in cart in the navigation - Done</li>
 		<li>create an Item class?</li>
 		<li>ability to update quantity?</li>
-		<li>autoloader?</li>
-		<li>add some images to our store</li>
-		<li>name spacing</li>
-        <li>add continue shopping and checkout buttons</li>
+		<li>autoloader? - Done</li>
+		<li>add some images to our store - Done</li>
+		<li>name spacing - Done</li>
+        <li>add continue shopping and checkout buttons - Done</li>
 	</ul>
 
 <?php
