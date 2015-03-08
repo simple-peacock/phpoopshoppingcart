@@ -88,7 +88,7 @@ if($products->count()) {
 				<p>Product ID: <?php echo $product->id; ?></p>
 				<p>Product Name: <?php echo $product->name; ?></p>
 				<p>Product Description: <?php echo stripslashes($product->description); ?></p>
-				<p>Price: $<?php echo $product->price; ?></p>
+				<p>Price: $<?php echo number_format($product->price, 2, '.', ','); ?></p>
 
 				<!-- our 'Add To Cart' button -->
 	            <a class="btn btn-danger" onclick='postData("add", <?php echo $product->id; ?>)'>Add To Cart</a>

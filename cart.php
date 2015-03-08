@@ -96,10 +96,9 @@ require_once 'config.php';
                     <td><?php echo $itemID ?></td>
                     <td><?php echo $itemName ?></td>
                     <td><?php echo $itemQty ?></td>
-                    <td><?php echo $itemPrice ?></td>
+                    <td>$<?php echo number_format($itemPrice, 2, '.', ',') ?></td>
 
                     <!-- our remove item button -->
-
                     <td><a class="close" onclick='postData("remove", <?php echo $itemID; ?>)'><span>&times;</span></a></td>
 
                 </tr>
@@ -115,7 +114,8 @@ require_once 'config.php';
 
         <?php
 
-        echo "Total Price: $" . $totalPrice;
+        // display total price with decimals and comma for thousands
+        echo "Total Price: $" . number_format($totalPrice, 2, '.', ',');
 
     }
 
