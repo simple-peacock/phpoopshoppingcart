@@ -96,7 +96,8 @@ require_once 'config.php';
                     <td><?php echo $itemPrice ?></td>
 
                     <!-- our remove item button -->
-                    <td><a class="close" href='process.php?action=remove&id=<?php echo $itemID ?>'><span>&times;</span></a></td>
+
+                    <td><a class="close" onclick='postData("remove", <?php echo $itemID; ?>)'><span>&times;</span></a></td>
 
                 </tr>
 

@@ -64,7 +64,7 @@ if($_POST['action'] == 'add') {
 
 if($_POST['action'] == 'remove') {
 
-    $id = $_GET['id'];
+    $id = $_POST['id'];
 
     $cart->removeItem($id);
 

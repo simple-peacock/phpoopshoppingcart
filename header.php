@@ -30,34 +30,38 @@ require_once 'vendor/autoload.php';
 	<!-- main body container -->
 	<div class="container">
 
-		<!-- begin navigation -->
-      	<ul class="nav nav-tabs" role="tablist">
-        	<li class='<?php if($page == "home") { echo "active"; } ?>'><a href="index.php">Home</a></li>
-        	<li class='<?php if($page == "products") { echo "active"; } ?>'><a href="products.php">Products</a></li>
-       		<li class='<?php if($page == "cart") { echo "active"; } ?>'><a href="cart.php">Cart
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- begin navigation -->
+                <ul class="nav navbar-nav">
+                    <li class='<?php if($page == "home") { echo "active"; } ?>'><a href="index.php">Home</a></li>
+                    <li class='<?php if($page == "products") { echo "active"; } ?>'><a href="products.php">Products</a></li>
+                    <li class='<?php if($page == "cart") { echo "active"; } ?>'><a href="cart.php">Cart
 
-          	<?php
-			/*
-	 		 * This code displays the number of items
-	 		 * currently in our shopping cart.
-	 		 *
-	 		 */
+                    <?php
+                    /*
+                     * This code displays the number of items
+                     * currently in our shopping cart.
+                     *
+                     */
 
-	 		$cart = new Cart();
+                    $cart = new Cart();
 
-	 		$itemCount = $cart->countItems();
+                    $itemCount = $cart->countItems();
 
-        	if($itemCount > 0) {
+                    if($itemCount > 0) {
 
-            ?>
-              		<span class="badge">
+                    ?>
+                            <span class="badge">
 
-                		<?php echo $itemCount; ?>
+                                <?php echo $itemCount; ?>
 
-              		</span>
+                            </span>
 
-          	<?php } ?>
-                </a></li>
+                    <?php } ?>
+                        </a></li>
 
-		</ul>
+                </ul>
+            </div>
+        </nav>
 		<!-- end of navigation -->

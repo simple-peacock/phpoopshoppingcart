@@ -21,9 +21,14 @@
 	ini_set('display_errors', 1);
 ?>
 
-	<h1>PHP OOP Shopping Cart</h1>
+    <div class="jumbotron">
+        <h1>PHP OOP Shopping Cart</h1>
+        <p>view source on github</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
 
-	TODO
+	<h2>TODO</h2>
+
 	<ul>
 		<li>messaging system, show totals - Done</li>
 		<li>improve cart display page - Done</li>
