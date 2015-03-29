@@ -27,6 +27,8 @@ require_once 'vendor/autoload.php';
 
   	<body>
 
+    <?php include_once('googleanalytics.php'); ?>  
+
 	<!-- main body container -->
 	<div class="container">
 
