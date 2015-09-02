@@ -133,15 +133,15 @@ if($cart->countItems() > 0) {
     <!-- "Empty Cart" button -->
     <div class="row">
         <div class="col-md-12">
-            <a class="btn btn-danger pull-right" onclick='postData("empty")'>Empty Cart</a>
+            <a class="btn btn-danger pull-right" onclick='postData("empty")'>Empty Cart <span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span></a>
         </div>
     </div>
 
     <!-- Our "Continue Shopping" and "Checkout" buttons -->
     <div class="row top-buffer-small">
         <div class="col-md-12">
-            <a class="btn btn-success pull-left" href="products.php">< Continue Shopping</a>
-            <a class="btn btn-primary pull-right" href="#p">Checkout ></a>
+            <a class="btn btn-success pull-left" href="products.php"><span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span> Continue Shopping</a>
+            <a class="btn btn-primary pull-right" href="#p">Checkout <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
         </div>
     </div>
 
