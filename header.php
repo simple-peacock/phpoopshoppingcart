@@ -20,7 +20,7 @@ require_once 'vendor/autoload.php';
     	<meta charset="utf-8" />
     	<title>PHP Shopping Cart</title>
 
-    	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/mystyles.css">
 
   	</head>
