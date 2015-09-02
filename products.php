@@ -90,11 +90,13 @@ if($products->count()) {
 				<p><strong>Price: $<?php echo number_format($product->price, 2, '.', ','); ?></strong></p>
 
 				<!-- our 'Add To Cart' button -->
-	            <a class="btn btn-info" onclick='postData("add", <?php echo $product->id; ?>)'>Add To Cart</a>
+	            <a class="btn btn-success" onclick='postData("add", <?php echo $product->id; ?>)'>Add To Cart</a>
 
 	        </div>
 
 		</div>
+
+		<hr>
 <?php
 
 	} // close our foreach loop used to display available products
