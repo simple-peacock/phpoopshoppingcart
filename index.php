@@ -24,7 +24,7 @@
     <div class="jumbotron">
         <h1>PHP OOP Shopping Cart</h1>
         <p>A simple shopping cart written in PHP.</p>
-        <p><a class="btn btn-primary" href="https://github.com/simple-peacock/phpoopshoppingcart" role="button">Go To GitHub</a></p>
+        <p><a class="btn btn-primary" href="products.php" role="button">View Products</a></p>
     </div>
 
 <?php
