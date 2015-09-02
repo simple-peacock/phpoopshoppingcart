@@ -1,26 +1,17 @@
 .top-buffer-large {
-
-    margin-top: 120px;
-
+    margin-top: 100;
 }
 
-
 .top-buffer-medium {
-
-    margin-top: 60px;
-
+    margin-top: 40px;
 }
 
 .top-buffer-small {
-
-    margin-top: 25px;
-
+    margin-top: 20px;
 }
 
 #productlist img {
-
-    max-height: 350px;
-
+    max-height: 200px;
 }
 
 

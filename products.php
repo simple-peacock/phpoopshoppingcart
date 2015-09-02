@@ -33,8 +33,10 @@ ini_set('display_errors', 1);
 require_once 'config.php';
 
 ?>
+<div class="top-buffer-medium">
+	<h1>Products</h1>
+</div>
 
-<h1>Products</h1>
 
 <?php
 
@@ -76,23 +78,21 @@ if($products->count()) {
 ?>
 		<div class="row top-buffer-medium" id="productlist">
 
-			<div class="col-sm-5">
-
+			<div class="col-sm-3">
 				<img class="img-responsive center-block" src="img/<?php echo $product->imagepath; ?>"/>
-
 			</div>
 
-
-			<div class="col-sm-7">
-
-				<p><strong><?php echo $product->name; ?></strong></p>
+			<div class="col-sm-6">
+				<h3><strong><?php echo $product->name; ?></strong></h3>
 				<p><?php echo stripslashes($product->description); ?></p>
-				<p><strong>Price: $<?php echo number_format($product->price, 2, '.', ','); ?></strong></p>
-
-				<!-- our 'Add To Cart' button -->
-	            <a class="btn btn-success" onclick='postData("add", <?php echo $product->id; ?>)'>Add To Cart</a>
-
 	        </div>
+
+			<div class="col-sm-3 text-center">
+				<h3>$<?php echo number_format($product->price, 2, '.', ','); ?></h3>
+				<p><a class="btn btn-success" onclick='postData("add", <?php echo $product->id; ?>)'>Add To Cart</a></p>
+				<p><a href="">Add to Wish List</a></p>
+				<p><a href="">Add to Compare</a></p>
+			</div>
 
 		</div>
 

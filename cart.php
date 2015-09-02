@@ -35,7 +35,9 @@ require_once 'config.php';
 
 ?>
 
-<h1>Cart Contents</h1>
+<div class="top-buffer-medium">
+    <h1>Cart Contents</h1>
+</div>
 
 <?php
 
@@ -130,17 +132,17 @@ if($cart->countItems() > 0) {
 
     <!-- "Empty Cart" button -->
     <div class="row">
-
-        <a class="btn btn-danger pull-right" onclick='postData("empty")'>Empty Cart</a>
-
+        <div class="col-md-12">
+            <a class="btn btn-danger pull-right" onclick='postData("empty")'>Empty Cart</a>
+        </div>
     </div>
 
     <!-- Our "Continue Shopping" and "Checkout" buttons -->
     <div class="row top-buffer-small">
-
-        <a class="btn btn-success pull-left" href="products.php">< Continue Shopping</a>
-        <a class="btn btn-primary pull-right" href="#p">Checkout ></a>
-
+        <div class="col-md-12">
+            <a class="btn btn-success pull-left" href="products.php">< Continue Shopping</a>
+            <a class="btn btn-primary pull-right" href="#p">Checkout ></a>
+        </div>
     </div>
 
     <?php
@@ -148,8 +150,15 @@ if($cart->countItems() > 0) {
 } // end if statement
 
 else {
+?>
+    <div class="row">
+        <div class="col-md-12">
+            <p>There are no items in your cart</p>
+            <a class="btn btn-success pull-left" href="products.php">Go Shopping</a>
+        </div>
+    </div>
 
-    echo "There are no items in the shopping cart.";
+<?php
 
 } // end else statement
 

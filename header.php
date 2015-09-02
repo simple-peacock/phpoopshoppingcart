@@ -32,7 +32,7 @@ require_once 'vendor/autoload.php';
 	<!-- main body container -->
 	<div class="container">
 
-        <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse top-buffer-small">
             <div class="container-fluid">
                 <!-- begin navigation -->
                 <ul class="nav navbar-nav">
