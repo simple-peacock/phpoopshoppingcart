@@ -79,7 +79,7 @@ if($products->count()) {
 		<div class="row top-buffer-medium" id="productlist">
 
 			<div class="col-sm-3">
-				<img class="img-responsive center-block" src="img/<?php echo $product->imagepath; ?>"/>
+				<img class="img-responsive center-block" src="img/products/<?php echo $product->imagepath; ?>"/>
 			</div>
 
 			<div class="col-sm-6">
