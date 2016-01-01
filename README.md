@@ -15,5 +15,5 @@ It is based around a main Cart class and can easily be extended or added to an e
 ### Installation:
 
 1. Clone the repository.
-2. Import the mysql dump file into your database or create your own products table. You will need to place product images in img/products.
-3. Create a config.php file in the root of the project. You can rename the existing sample_config.php file.
+2. Import the mysql dump file (sample_database_dump.sql) into your database or create your own products table. You will need to place product images in img/products.
+3. Create a config.php file in the root of the project. You can rename the provided sample_config.php file and change the values accordingly.
