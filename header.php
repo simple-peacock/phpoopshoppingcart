@@ -20,8 +20,8 @@ require_once 'vendor/autoload.php';
 		<link rel="stylesheet" href="css/mystyles.css">
   	</head>
   	<body>
-    	<!-- main body container -->
-    	<div class="container">
+        <!-- main body container -->
+        <div class="container">
             <!-- begin navigation -->
             <nav class="navbar navbar-inverse top-buffer-small">
                 <div class="container-fluid">
@@ -48,4 +48,4 @@ require_once 'vendor/autoload.php';
                     </ul>
                 </div>
             </nav>
-    		<!-- end of navigation -->
+            <!-- end of navigation -->
