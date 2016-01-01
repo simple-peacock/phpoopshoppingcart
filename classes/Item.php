@@ -2,14 +2,21 @@
 
 namespace SimplePeacock;
 
-//not sure if we will end up using this
-
 class Item {
 
-    protected $id;
+    private $id;
+    private $price;
+    private $name;
 
     public function getId() {
         return $this->id;
     }
+
+    public function getPrice() {
+        return $this->price;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }
-?>
